@@ -58,7 +58,7 @@ The relevant code is in WebAppKeyVault/WebAppKeyVault/Controllers/HomeController
 ```csharp    
 public async System.Threading.Tasks.Task<ActionResult> Index()
 {
-    AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
+    AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider($"RunAs=App;AppId={AppID};TenantId={TenantID};AppKey={AppKey}");
 
     try
     {
